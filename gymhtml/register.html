@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="stylesreg.css">
+</head>
+<body>
+    <div class="container">
+        <h1><u>Registration Form</u></h1>
+        <form id="registration-form" action="#" method="post">
+            <div class="form-group">
+                <label for="firstname">First Name:</label><br>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="lastname">Date of birth:</label>
+                <input type="date" id="dob" name="dob"  required>
+            </div>
+            
+
+            <div class="form-group">
+                    <label>Gender:</label>
+                    <input type="radio" id="gen" name="gen" value="Male">
+                    <label for="gen">Male</label>
+                    <input type="radio" id="gen" name="gen" value="Female">
+                    <label for="gen">Female</label>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="inputState">State</label>
+                <select id="inputState">
+                    <option value="SelectState">Select State</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="TamilNadu">TamilNadu</option>                  
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDistrict">District</label>
+                <select  id="inputDistrict">
+                    <option value="">-- select one -- </option>
+                </select>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea type="textarea" rows="6" cols="40"  id="address" name="address" placeholder="Enter your residential address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password here" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="confirm-password" required>
+            </div>
+            <button type="submit" >Register</button>
+        </form>
+    </div>
+
+    <script src="scriptreg.js"></script>
+
+
+</body>
+</html>
