@@ -25,3 +25,45 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     });
 });
+
+
+const stateSelect = document.getElementById("inputState");
+const districtSelect = document.getElementById("inputDistrict");
+
+
+const districtData = {
+    "Karnataka": ["Kodagu", "Bengalurru", "Udupi"],
+    "Kerala": ["Kottayam", "Thiruvananthapuram", "Ernakulam"],
+    "Madhya Pradesh": ["Bhopal", "Sehore", "Vidisha"],
+    "Tamil Nadu": ["Chennai", "Coimbatore", "Theni"]
+};
+
+
+function updateDistrictOptions() {
+    const selectedState = stateSelect.value;
+    
+    
+    districtSelect.innerHTML = "";
+
+    
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "-- Select one --";
+    districtSelect.appendChild(defaultOption);
+
+    
+    if (selectedState in districtData) {
+        districtData[selectedState].forEach((district) => {
+            const option = document.createElement("option");
+            option.value = district;
+            option.text = district;
+            districtSelect.appendChild(option);
+        });
+    }
+}
+
+
+stateSelect.addEventListener("change", updateDistrictOptions);
+
+
+updateDistrictOptions();
