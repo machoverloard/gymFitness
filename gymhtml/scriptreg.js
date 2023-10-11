@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 const stateSelect = document.getElementById("inputState");
 const districtSelect = document.getElementById("inputDistrict");
 
-
 const districtData = {
     "Karnataka": ["Kodagu", "Bengalurru", "Udupi"],
     "Kerala": ["Kottayam", "Thiruvananthapuram", "Ernakulam"],
@@ -42,10 +41,8 @@ const districtData = {
 function updateDistrictOptions() {
     const selectedState = stateSelect.value;
     
-    
     districtSelect.innerHTML = "";
 
-    
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
     defaultOption.text = "-- Select one --";
