@@ -4,51 +4,20 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #54b3de;
-        }
-        .container {
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(48, 39, 39, 0.2);
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="password"] {
-            width: 85%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        .error-message {
-            color: red;
-        }
-        .success-message {
-            color: green;
-        }
-
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-        
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
+
+    <header>
+        <div class="logo">
+            <img src="logo3.jpg" alt="Logo">
+            <h1>Gym Fitness</h1>
+        </div>
+
+    </header>    
+
     <div class="container">
-        <h2>Login</h2>
+        <h2>Enter your Credentials</h2>
         <div id="error-message" class="error-message"></div>
         <div id="success-message" class="success-message"></div>
         <form id="login-form">
@@ -60,46 +29,35 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
+
             <div class="center">
-                <button type="submit" style="background-color:rgb(20, 165, 232);color:white; height:50px;width:100px"><b>Login</b></button>
+                <button type="submit"><b>Login</b></button>
             </div>
 
             <hr>
-            <h4><i>Already a Member?</i>
+            <h4><i>Don't have an account?</i>
 
             <a href="register.html">Register</a></h4>
 
             <div class="center">
-              <button type="button" onclick ="history.back()" style="background-color:rgb(219, 31, 18);color:rgb(255, 254, 254); height:50px;width:100px;" >Back</button>
+              <button type="button" onclick ="history.back()" >Back</button>
             </div>
 
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById("login-form");
-        const errorMessage = document.getElementById("error-message");
-        const successMessage = document.getElementById("success-message");
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="fblogo.png" alt="Facebook" style="width:35px;height:35px"></a>
+            <a href="#"><img src="instalogo.jpg" alt="Instagram" style="width:35px;height:35px"></a>
+           
+        </div>
+        <div class="copyright">
+            &copy; 2023 GYM Fitness. All Rights Reserved.
+        </div>
+    </footer>
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
 
-            
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-            if (!emailPattern.test(email)) {
-                errorMessage.textContent = "Invalid email address";
-                successMessage.textContent = "";
-            } else if (password === "password123") { 
-                errorMessage.textContent = "";
-                successMessage.textContent = "Login successful!";
-            } else {
-                errorMessage.textContent = "Incorrect password";
-                successMessage.textContent = "";
-            }
-        });
-    </script>
+   <script src="login.js"></script>
 </body>
 </html>

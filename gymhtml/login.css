@@ -1,0 +1,89 @@
+  body {
+            font-family: Arial, sans-serif;
+            background-image: url('gym1.jpeg'); 
+            background-size: cover;
+            background-attachment: scroll;
+
+        }
+        .container {
+            max-width: 500px;
+            margin: 5% auto;
+            padding: 20px;
+            background-color: #9d6f6f;
+            opacity: 0.9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(48, 39, 39, 0.2);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"] {
+            width: 85%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .error-message {
+            color: red;
+        }
+        .success-message {
+            color: green;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+
+        h1{
+            color: #ffffff;
+
+        }
+
+        button {
+            height:50px;
+            width:100px;
+            color:white;
+            background-color: blue;
+        }
+
+
+        header {
+            background-color: rgb(55, 49, 49);
+            opacity: 0.9;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px; 
+        }
+
+    
+
+footer {
+    background-color: #333;
+    color: white;
+    opacity: 0.9;
+    text-align: center;
+    padding: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    
+    margin: 20px;
+   
+}

@@ -6,6 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirm-password").value;
+        const firstname = document.getElementById("firstname").value;
+        const lastname = document.getElementById("lastname").value;
+
+        const namePattern = /^[a-zA-Z]+$/; 
+
+        if (!namePattern.test(firstname)) {
+            alert("Please enter a valid first name with letters only");
+            return;
+        }
+
+        if (!namePattern.test(lastname)) {
+            alert("Please enter a valid last name with letters only");
+            return;
+        }
 
         
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
