@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const namePattern = /^[a-zA-Z]+$/; 
 
         if (!namePattern.test(firstname)) {
-            alert("Please enter a valid first name with letters only");
+            alert("Please enter a valid 'First name' with letters only...!");
             return;
         }
 
         if (!namePattern.test(lastname)) {
-            alert("Please enter a valid last name with letters only");
+            alert("Please enter a valid 'Last name' with letters only!");
             return;
         }
 

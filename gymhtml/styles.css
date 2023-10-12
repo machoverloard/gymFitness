@@ -31,6 +31,9 @@ nav a {
     text-decoration: none;
     color: white;
 }
+nav a:hover{
+    color:rgb(13, 255, 0);
+}
 
 
 .slideshow-container {
@@ -66,5 +69,6 @@ footer {
    
     
 }
+
 
 

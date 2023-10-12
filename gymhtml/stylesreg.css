@@ -69,6 +69,19 @@ button:hover {
     background-color: #0cd123;
 }
 
+input:hover{
+    background-color: #dfdddb;
+}
+
+textarea:hover{
+    background-color: #dfdddb; 
+}
+
+select:hover{
+    background-color: #dfdddb; 
+}
+
+
 
 
 
