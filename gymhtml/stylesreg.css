@@ -81,6 +81,13 @@ select:hover{
     background-color: #dfdddb; 
 }
 
+.error-message {
+    color: red;
+}
+.success-message {
+    color: green;
+}
+
 
 
 

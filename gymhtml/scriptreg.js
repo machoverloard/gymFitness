@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registration-form");
+
+    const errorMessage = document.getElementById("error-message");
+    const successMessage = document.getElementById("success-message");
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         const username = document.getElementById("username").value;
@@ -12,12 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const namePattern = /^[a-zA-Z]+$/; 
 
         if (!namePattern.test(firstname)) {
-            alert("Please enter a valid 'First name' with letters only...!");
+            errorMessage.textContent = "Please enter a valid 'First name' with letters only..!";
+            successMessage.textContent = "";
+            //alert("Please enter a valid 'First name' with letters only...!");
             return;
         }
 
         if (!namePattern.test(lastname)) {
-            alert("Please enter a valid 'Last name' with letters only!");
+            errorMessage.textContent = "Please enter a valid 'Last name' with letters only!";
+            successMessage.textContent = "";
+
+            //alert("Please enter a valid 'Last name' with letters only!");
             return;
         }
 
@@ -25,19 +34,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
         if (!emailPattern.test(email)) {
-            alert("Please enter a valid email address");
+            errorMessage.textContent = "Please enter a valid email address";
+            successMessage.textContent = "";
+            //alert("Please enter a valid email address");
             return;
         }
 
         if (password !== confirmPassword) {
-            alert("Passwords do not match");
+            errorMessage.textContent = "Passwords do not match";
+            successMessage.textContent = "";
+            //alert("Passwords do not match");
             return;
         }
 
-        
-        alert("Registration successful!");
+        successMessage.textContent = "---Registration successful..!";
+        //alert("Registration successful!");
         form.reset();
     });
+
+    
+
 });
 
 
