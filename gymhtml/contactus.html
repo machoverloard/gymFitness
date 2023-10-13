@@ -22,14 +22,16 @@
 
     <div class="container1">
         <h2>Message us</h2>
-        
+       
         <form id="login-form">
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter your email address" required>
             </div>
             <div class="form-group">
-                <label for="password">Message us:</label>
+                <label for="password">Message:</label>
                 <textarea type="textarea" rows="9" cols="60"  id="address" name="address" placeholder="Type your enquires here:" required></textarea>
             </div>
 
@@ -37,11 +39,10 @@
                 <button type="submit"><b>Send</b></button>
             </div>
 
-
         </form>
     </div>
 
-
+<script src="contactus.js"></script>
 
 </body>
 </html>

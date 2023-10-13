@@ -61,3 +61,10 @@
             color:white;
             background-color: rgb(1, 118, 40);
         }
+
+        .error-message {
+            color: red;
+        }
+        .success-message {
+            color: green;
+        }
