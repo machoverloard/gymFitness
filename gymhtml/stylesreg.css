@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('gym3.jpg'); 
+    background-image: url('img/gym3.jpg'); 
     background-size: cover;
     background-attachment: scroll;
     margin: 0;
@@ -90,6 +90,11 @@ select:hover{
 }
 .success-message {
     color: green;
+}
+
+p{
+    color:red;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
