@@ -4,57 +4,75 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.getElementById("error-message");
     const successMessage = document.getElementById("success-message");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
-        const firstname = document.getElementById("firstname").value;
-        const lastname = document.getElementById("lastname").value;
+    const namePattern = /^[a-zA-Z]+$/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-        const namePattern = /^[a-zA-Z]+$/; 
-
-        if (!namePattern.test(firstname)) {
+    const firstnameInput = document.getElementById("firstname");
+    firstnameInput.addEventListener("blur", function (e) {
+        if (!namePattern.test(firstnameInput.value)) {
+            e.preventDefault(); // Prevent form submission
             errorMessage.textContent = "Please enter a valid 'First name' with letters only..!";
-            successMessage.textContent = "";
-            //alert("Please enter a valid 'First name' with letters only...!");
-            return;
+        } else {
+            errorMessage.textContent = " ";
         }
-
-        if (!namePattern.test(lastname)) {
-            errorMessage.textContent = "Please enter a valid 'Last name' with letters only!";
-            successMessage.textContent = "";
-
-            //alert("Please enter a valid 'Last name' with letters only!");
-            return;
-        }
-
-        
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-        if (!emailPattern.test(email)) {
-            errorMessage.textContent = "Please enter a valid email address";
-            successMessage.textContent = "";
-            //alert("Please enter a valid email address");
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            errorMessage.textContent = "Passwords do not match";
-            successMessage.textContent = "";
-            //alert("Passwords do not match");
-            return;
-        }
-
-        successMessage.textContent = "---Registration successful..!";
-        //alert("Registration successful!");
-        form.reset();
     });
 
-    
+    const lastnameInput = document.getElementById("lastname");
+    lastnameInput.addEventListener("blur", function (e) {
+        if (!namePattern.test(lastnameInput.value)) {
+            e.preventDefault(); 
+            errorMessage.textContent = "Please enter a valid 'Last name' with letters only!";
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
 
+    const emailInput = document.getElementById("email");
+    emailInput.addEventListener("blur", function (e) {
+        if (!emailPattern.test(emailInput.value)) {
+            e.preventDefault(); 
+            errorMessage.textContent = "Please enter a valid email address";
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+
+    passwordInput.addEventListener("blur", checkPasswordMatch);
+    confirmPasswordInput.addEventListener("blur", checkPasswordMatch);
+
+    function checkPasswordMatch(e) {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        if (password !== confirmPassword) {
+            e.preventDefault(); 
+            errorMessage.textContent = "Passwords do not match";
+        } else {
+            errorMessage.textContent = "";
+        }
+    }
+
+    form.addEventListener("submit", function (e) {
+        const username = document.getElementById("username").value;
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+        const firstname = firstnameInput.value;
+        const lastname = lastnameInput.value;
+
+        if (!namePattern.test(firstname) || !namePattern.test(lastname) || !emailPattern.test(email) || password !== confirmPassword) {
+            e.preventDefault(); 
+            errorMessage.textContent = "Please fix the errors before submitting.";
+        } else {
+            errorMessage.textContent = "";
+        }
+
+    });
 });
+
 
 
 const stateSelect = document.getElementById("inputState");
@@ -66,7 +84,6 @@ const districtData = {
     "Madhya Pradesh": ["Bhopal", "Sehore", "Vidisha"],
     "Tamil Nadu": ["Chennai", "Coimbatore", "Theni"]
 };
-
 
 function updateDistrictOptions() {
     const selectedState = stateSelect.value;
@@ -89,9 +106,7 @@ function updateDistrictOptions() {
     }
 }
 
-
 stateSelect.addEventListener("change", updateDistrictOptions);
-
 updateDistrictOptions();
 
 
