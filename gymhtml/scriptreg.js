@@ -67,8 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault(); 
             errorMessage.textContent = "Please fix the errors before submitting.";
         } else {
-            errorMessage.textContent = "";
+            errorMessage.textContent = ""; 
         }
+
+        successMessage.textContent = "---Registration successful..!";
+        alert("Registration successful!");
+        form.reset();
 
     });
 });
