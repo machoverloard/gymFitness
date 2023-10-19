@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const namePattern = /^[a-zA-Z]+$/;
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const phonePattern = /^\d{10}$/; // Matches exactly 10 digits
 
     const firstnameInput = document.getElementById("firstname");        
     firstnameInput.addEventListener("blur", function (e) {
@@ -32,6 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!emailPattern.test(emailInput.value)) {                     //email validation according to email pattern
             e.preventDefault(); 
             errorMessage.textContent = "Please enter a valid email address";
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+
+    const phoneInput = document.getElementById("phone");         
+    phoneInput.addEventListener("blur", function (e) {
+        if (!phonePattern.test(phoneInput.value)) {                     //email validation according to email pattern
+            e.preventDefault(); 
+            errorMessage.textContent = "Please enter a valid phone number";
         } else {
             errorMessage.textContent = "";
         }
